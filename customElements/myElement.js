@@ -18,7 +18,7 @@ class myElement extends HTMLElement { // se crea una clase myElement sin espacio
        
         this.p = document.createElement("p");//generamos nodos que se puedan utilizar dentro del componente
     }
-    connectedCallback() { // visulizar la etiqueta 
+    connectedCallback() { // visualizar la etiqueta 
         this.p.textContent = "hola mundo!!";//llamamos la variable
         this.appendChild(this.p);// agregar al dom a nuestra etiqueta con el appenchild
         this.appendChild(template);
