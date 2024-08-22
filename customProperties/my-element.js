@@ -11,10 +11,14 @@ class myElement extends HTMLElement {
             <h1>
             <slot name="title"></slot>
             </h1>
-            <p>
+            <div>
+            <h2>
             <slot name="parrafo"></slot>
-            </p>
-            <slot></slot>
+            </h2>
+            </div>
+            <p>
+            <slot name="prueba"></slot>
+            </p>    
         </section>
         ${this.getStyles()}
         `;
@@ -23,28 +27,28 @@ class myElement extends HTMLElement {
     getStyles() {
         return `
         <style>
-        :host {
+            :host {
+            --primary-color: tomato;
+            --secondary-color: salmon;
+            --heading-primary: 30px;
+            --heading-secondary: 25px;
             display: inline-block;
             width: 100%;
             min-width: 300px;
             max-width: 450px;
-            font-size: 20px;
-            background: grey;
         }
-        :host(.blue) {
-            background: blue;
-        }
-        :host([yellow]) {
-            background: yellow;
-        }
-        :host ([yellow]) h1 {
-            color: blue;
-        }
-        :host-context(article.card) {
-            display: block;
-            max-width: 100%;
-            background: red;
-        }
+            section {
+                background: var(--primary-color);
+            }
+            section div {
+                background: var(--secondary-color);
+            }
+            h1 {
+                font-size: var(--heading-primary);
+            }
+            p {
+                font-size: var(--heading-secondary);
+            }
         </style>
         `;
     }

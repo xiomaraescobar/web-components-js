@@ -23,28 +23,10 @@ class myElement extends HTMLElement {
     getStyles() {
         return `
         <style>
-        :host {
-            display: inline-block;
-            width: 100%;
-            min-width: 300px;
-            max-width: 450px;
-            font-size: 20px;
-            background: grey;
-        }
-        :host(.blue) {
-            background: blue;
-        }
-        :host([yellow]) {
-            background: yellow;
-        }
-        :host([yellow]) h1 {
-            color: blue;
-        }
-        :host-context(article.card) {
-            display: block;
-            max-width: 100%;
-            background: red;
-        }
+            ::slotted(span.title) {
+                font-size: 30px;
+                color: red;
+            }
         </style>
         `;
     }
